@@ -79,7 +79,7 @@ public class GUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        _url = (String) JOptionPane.showInputDialog(null, "Enter staff URL");
+        _url = (String) JOptionPane.showInputDialog(_button, "Enter staff URL");
 
         run(_url);
     }
