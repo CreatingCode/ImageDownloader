@@ -7,12 +7,21 @@ public class Parser {
     private static final String SRC_RE = "src=\".*?\"";
     private static final String DAT_RE = "data-original=(\"|\').*?(\"|\')";
 
+    public static boolean isValid(String s) {
+        if (s == null) {
+            return false;
+        } else if (!s.contains(".com")) {
+            return false;
+        } else return true;
+    }
+
     // url needs to have a format of http://<DOMAIN>.com/<STAFF_PAGE>
     public static String validateURL(String url) {
         String validatedURL = url;
 
         validatedURL = validatedURL.replace("https://", "");
         validatedURL = validatedURL.replace("www.", "");
+        validatedURL = validatedURL.replaceAll(" ", "%20");
 
         if (!validatedURL.startsWith("http://")) {
             validatedURL = "http://" + validatedURL;
@@ -82,9 +91,6 @@ public class Parser {
     }
 
     // strip out the attribute and quotes
-    private static String strip(String src) {
-        return src.substring(src.indexOf("\"")+1, src.length()-1);
-    }
     private static String stripRE(String src) {
         String temp = src;
         temp = temp.replaceAll("src=", "");

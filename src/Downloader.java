@@ -14,11 +14,14 @@ public class Downloader {
 
         if (dir.exists()) {
             System.out.println("Directory already exits, program might override files in directory");
+            GUI.toLog("Directory already exits, program might override files in directory");
         } else {
             if (dir.mkdir()) {
                 System.out.println("Directory is created!");
+                GUI.toLog("Directory is created!");
             } else {
                 System.out.println("Failed to create directory!");
+                GUI.toLog("Failed to create directory!");
             }
         }
     }
@@ -43,11 +46,14 @@ public class Downloader {
             in.close();
 
             System.out.println("Downloaded image named: " + name);
+            GUI.toLog("Downloaded image named: " + name);
         } catch (MalformedURLException e) {
             System.out.println("Could not download image! URL: " + validatedURL);
+            GUI.toLog("* ¯\\_(ツ)_/¯ *-> Could not download image! URL: " + validatedURL + " <-*");
             e.printStackTrace();
         } catch (IOException e) {
             System.out.println("Could not download image! URL: " + validatedURL);
+            GUI.toLog("* ¯\\_(ツ)_/¯ *-> Could not download image! URL: " + validatedURL + " <-*");
             e.printStackTrace();
         }
     }
@@ -74,11 +80,16 @@ public class Downloader {
             }
 
             System.out.println("Downloaded HTML source from: " + validatedURL);
+            GUI.toLog("Downloaded HTML source from: " + validatedURL);
         } catch (MalformedURLException e) {
             System.out.println("Could not ownloaded HTML source! Site: " + validatedURL);
+            GUI.toLog("* ¯\\_(ツ)_/¯ *-> Could not ownloaded HTML source! Site: " + validatedURL);
+            GUI.toLog("*********************************\n");
             e.printStackTrace();
         } catch (IOException e) {
             System.out.println("Could not ownloaded HTML source! Site: " + validatedURL);
+            GUI.toLog("* ¯\\_(ツ)_/¯ *-> Could not ownloaded HTML source! Site: " + validatedURL);
+            GUI.toLog("*********************************\n");
             e.printStackTrace();
         }
 
