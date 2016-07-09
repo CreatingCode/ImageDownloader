@@ -1,3 +1,7 @@
+package com.isaaccode;
+
+import com.isaaccode.gui.GUI;
+
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;

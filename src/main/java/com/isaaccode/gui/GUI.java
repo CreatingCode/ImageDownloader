@@ -1,3 +1,8 @@
+package com.isaaccode.gui;
+
+import com.isaaccode.Downloader;
+import com.isaaccode.Parser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,7 +27,7 @@ public class GUI implements ActionListener {
         System.setProperty("apple.laf.useScreenMenuBar", "true");
 
         // set the name of the application menu item
-        System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Staff Downloader");
+        System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Staff com.isaaccode.Downloader");
 
         // set the look and feel
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
